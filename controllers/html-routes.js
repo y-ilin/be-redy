@@ -21,10 +21,10 @@ module.exports = function(app) {
     res.render("login");
   });
 
-  // Here we've add our isAuthenticated middleware to this route.
+  // Here we've add our isAuthenticated middleware to this route
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
 
-  // Modify this route to change data to the members page through handlebars.js. 
+  // Modify this route to change data to the members page through handlebars.js
   app.get("/members", isAuthenticated, (req, res) => {
     res.render("members");
   });
