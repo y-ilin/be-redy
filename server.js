@@ -2,8 +2,12 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
+const Handlebars = require("handlebars");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+const {
+  allowInsecurePrototypeAccess
+} = require("@handlebars/allow-prototype-access");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -22,12 +26,19 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Set Handlebars.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
+  })
+);
 app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./controllers/html-routes.js")(app);
 require("./controllers/api-routes.js")(app);
+require("./controllers/postIt-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {

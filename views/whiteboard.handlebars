@@ -1,4 +1,4 @@
-<body>
+
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -14,5 +14,9 @@
         <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
+      {{#each stickyNote}}
+        <div class="draggable" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
+          <p> {{ this.noteText }} </p>
+        </div>
+      {{/each}}
   </div>
-</body>
