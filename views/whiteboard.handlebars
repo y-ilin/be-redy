@@ -15,31 +15,12 @@
     </div>
 
     {{#each stickyNote}}
-    <div id="{{ this.id }}" class="draggable" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
-      data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}" onmouseleave="sendTextData(this)">
+    <div id="{{ this.id }}" class="draggable thisMoves" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
+      data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
       <div class="deleteButton"><i class="fas fa-times"></i></div>
-      
       <p contentEditable="true"> {{ this.noteText }} </p>
 
     </div>
     {{/each}}
   </div>
 </div>
-  <script>
-    function sendTextData(data) {
-
-    const allData = {
-       noteText: data.children[1].innerHTML,
-       id: data.id,
-       xCoord: data.dataset.x,
-       yCoord: data.dataset.y
-    };
-     $.ajax({
-       method: "PUT",
-       url: "/api/notes",
-       data: allData
-    }).then(() => {
-       location.reload();
-    });
-  }
-  </script>
