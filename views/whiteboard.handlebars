@@ -16,7 +16,8 @@
     {{#each stickyNote}}
     <div id="{{ this.id }}" class="draggable" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
       data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
-      <div class="deleteButton"><i class="fas fa-times"></i></div>
+      <div class="button deleteButton"><i class="fas fa-times"></i></div>
+      <div class="button voteButton"><i class="fas fa-star"></i></div>
       <p> {{ this.noteText }} </p>
     </div>
     {{/each}}
