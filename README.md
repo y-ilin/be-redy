@@ -1,6 +1,6 @@
 ![build](https://img.shields.io/travis/darren-behan/be-redy) ![Code Count](https://img.shields.io/github/languages/count/darren-behan/be-redy) ![Main Code Base](https://img.shields.io/github/languages/top/darren-behan/be-redy) ![License Badge](https://img.shields.io/badge/license-none-blue) ![Version Badge](https://img.shields.io/badge/version-1.0-red) ![Last Commit](https://img.shields.io/github/last-commit/darren-behan/be-redy) ![Open Issues](https://img.shields.io/github/issues-raw/darren-behan/be-redy) ![Repo Size](https://img.shields.io/github/repo-size/darren-behan/be-redy)
 
-# Welcome to beredy 👋
+# Welcome to be-redy 👋
 
 ## Description
 
