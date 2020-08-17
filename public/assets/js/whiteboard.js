@@ -44,7 +44,6 @@ $(document).ready(() => {
 
   function dragMoveListener(event) {
     const target = event.target;
-    const id = target.getAttribute("id");
 
     // keep the dragged position in the data-x/data-y attributes
     const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
@@ -58,32 +57,11 @@ $(document).ready(() => {
     target.setAttribute("data-x", x);
     target.setAttribute("data-y", y);
 
-    const coords = {
-      id: id,
-      x: x,
-      y: y
-    };
+    // this function is used later in the resizing and gesture demos
+    window.dragMoveListener = dragMoveListener;
 
-    // This function updates a note position in our database
-    updateNoteCoordinates(coords);
+    //////////////// End of InteractJS library code ////////////////
   }
-
-  // This function updates a note position in our database
-  const updateNoteCoordinates = coords => {
-    $.ajax({
-      method: "PUT",
-      url: "/api/notes",
-      data: coords
-    }).then(() => {
-      location.reload();
-    });
-  };
-
-  // this function is used later in the resizing and gesture demos
-  window.dragMoveListener = dragMoveListener;
-
-  //////////////// End of InteractJS library code ////////////////
-
   // Event listener listening for a click on any delete button, then will run deleteSticky
   $(document).on("click", ".deleteButton", deleteSticky);
 
@@ -98,6 +76,25 @@ $(document).ready(() => {
       url: "/api/notes/" + id
     }).then(() => {
       console.log("sticky deleted");
+      location.reload();
+    });
+  }
+  $(".thisMoves").on("mouseleave", event => {
+    sendTextData(event.currentTarget);
+  });
+
+  function sendTextData(element) {
+    const allData = {
+      noteText: element.children[1].innerHTML,
+      id: element.id,
+      xCoord: element.dataset.x,
+      yCoord: element.dataset.y
+    };
+    $.ajax({
+      method: "PUT",
+      url: "/api/notes",
+      data: allData
+    }).then(() => {
       location.reload();
     });
   }

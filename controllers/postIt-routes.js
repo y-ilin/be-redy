@@ -17,30 +17,15 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating notes. We can get the updated note data from req.body
+  // UPDATE route for updating text and coordinates
   app.put("/api/notes", (req, res) => {
-    console.log(req.body.id);
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    db.StickyNote.update(
-      {
-        xCoord: req.body.x,
-        yCoord: req.body.y
-      },
-      {
-        where: {
-          id: req.body.id
-        }
+    db.StickyNote.update(req.body, {
+      where: {
+        id: req.body.id
       }
-    )
-      .then(dbStickyNote => {
-        res.json(dbStickyNote);
-      })
-      .catch(err => {
-        // Whenever a validation or flag fails, an error is thrown
-        // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-        res.json(err);
-      });
+    }).then(data => {
+      res.json(data);
+    });
   });
 
   // DELETE route for deleting stickies.
