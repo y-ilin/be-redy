@@ -16,4 +16,14 @@ module.exports = function(app) {
       res.json(data);
     });
   });
+
+  app.put("/api/notes", (req, res) => {
+    db.StickyNote.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(data => {
+      res.json(data);
+    });
+  });
 };

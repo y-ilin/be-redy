@@ -57,8 +57,6 @@ $(document).ready(() => {
     target.setAttribute("data-y", y);
 
     // Add automatically changing AJAX request here...
-    console.log(x);
-    console.log(y);
   }
 
   // this function is used later in the resizing and gesture demos
