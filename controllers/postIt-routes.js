@@ -16,4 +16,16 @@ module.exports = function(app) {
       res.json(data);
     });
   });
+
+  // Delete sticky
+  app.delete("/api/notes/:id", (req, res) => {
+    console.log(req.params.id);
+    db.StickyNote.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbStickyNote => {
+      res.json(dbStickyNote);
+    });
+  });
 };
