@@ -5,6 +5,16 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
+  // Click event for new note.
+  $(document).on("click", "#new-post", newNote);
+
+  // Function to add note to db and reload page.
+  function newNote(stickyNote) {
+    $.post("/api/notes", () => {
+      return stickyNote;
+    }).then(location.reload());
+  }
+
   // InteractJS library code
 
   // target elements with the "draggable" class
