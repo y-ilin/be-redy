@@ -14,5 +14,12 @@ form.login {
   touch-action: none;
   user-select: none;
   -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  position: relative;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
