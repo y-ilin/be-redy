@@ -38,22 +38,14 @@ $(document).ready(() => {
       // call this function on every dragend event
       end(event) {
         console.log(event);
-        //     const textEl = event.target.querySelector("p");
-        //     textEl &&
-        //       (textEl.textContent =
-        //         "moved a distance of " +
-        //         Math.sqrt(
-        //           (Math.pow(event.pageX - event.x0, 2) +
-        //             Math.pow(event.pageY - event.y0, 2)) |
-        //             0
-        //         ).toFixed(2) +
-        //         "px");
       }
     }
   });
 
   function dragMoveListener(event) {
     const target = event.target;
+    const id = target.getAttribute("id");
+
     // keep the dragged position in the data-x/data-y attributes
     const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
     const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
@@ -66,10 +58,26 @@ $(document).ready(() => {
     target.setAttribute("data-x", x);
     target.setAttribute("data-y", y);
 
-    // Add automatically changing AJAX request here...
-    console.log(x);
-    console.log(y);
+    const coords = {
+      id: id,
+      x: x,
+      y: y
+    };
+
+    // This function updates a note position in our database
+    updateNoteCoordinates(coords);
   }
+
+  // This function updates a note position in our database
+  const updateNoteCoordinates = coords => {
+    $.ajax({
+      method: "PUT",
+      url: "/api/notes",
+      data: coords
+    }).then(() => {
+      location.reload();
+    });
+  };
 
   // this function is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
