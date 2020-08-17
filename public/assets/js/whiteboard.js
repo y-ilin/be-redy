@@ -47,6 +47,12 @@ $(document).ready(() => {
     // update the position attributes
     target.setAttribute("data-x", x);
     target.setAttribute("data-y", y);
+
+    const coords = {
+      id: id,
+      x: x,
+      y: y
+    };
   }
 
   // this function is used later in the resizing and gesture demos
