@@ -42,4 +42,19 @@ module.exports = function(app) {
         res.json(err);
       });
   });
+
+  // DELETE route for deleting stickies.
+  app.delete("/api/notes/:id", (req, res) => {
+    db.StickyNote.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbStickyNote => {
+        res.json(dbStickyNote);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
 };

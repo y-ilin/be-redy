@@ -15,7 +15,7 @@ $(document).ready(() => {
     }).then(location.reload());
   }
 
-  // InteractJS library code
+  /////////////// Start of InteractJS library code ///////////////
 
   // target elements with the "draggable" class
   interact(".draggable").draggable({
@@ -81,4 +81,24 @@ $(document).ready(() => {
 
   // this function is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
+
+  //////////////// End of InteractJS library code ////////////////
+
+  // Event listener listening for a click on any delete button, then will run deleteSticky
+  $(document).on("click", ".deleteButton", deleteSticky);
+
+  function deleteSticky(event) {
+    event.stopPropagation();
+    const closestSticky = $(this).closest(".draggable")[0];
+    const id = $(closestSticky).attr("id");
+    console.log("sticky id is " + id);
+
+    $.ajax({
+      method: "DELETE",
+      url: "/api/notes/" + id
+    }).then(() => {
+      console.log("sticky deleted");
+      location.reload();
+    });
+  }
 });

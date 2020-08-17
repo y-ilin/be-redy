@@ -1,5 +1,4 @@
-
-  <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/logout">
@@ -8,16 +7,18 @@
     </div>
   </div>
 </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-        <button id="new-post">Insert new post-it!</button>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>Welcome <span class="member-name"></span></h2>
+      <button id="new-post">Insert new post-it!</button>
     </div>
-      {{#each stickyNote}}
-        <div id="{{ this.id }}" class="draggable" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
-          <p> {{ this.noteText }} </p>
-        </div>
-      {{/each}}
+    {{#each stickyNote}}
+    <div id="{{ this.id }}" class="draggable" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
+      data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
+      <div class="deleteButton"><i class="fas fa-times"></i></div>
+      <p> {{ this.noteText }} </p>
+    </div>
+    {{/each}}
   </div>
+</div>
