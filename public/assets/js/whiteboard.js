@@ -53,7 +53,21 @@ $(document).ready(() => {
       x: x,
       y: y
     };
+
+    // This function updates a note position in our database
+    updateNoteCoordinates(coords);
   }
+
+  // This function updates a note position in our database
+  const updateNoteCoordinates = coords => {
+    $.ajax({
+      method: "PUT",
+      url: "/api/notes",
+      data: coords
+    }).then(() => {
+      location.reload();
+    });
+  };
 
   // this function is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
