@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h2>Welcome <span class="member-name"></span></h2>
-      <button id="new-post">Insert new post-it!</button>
+      {{!-- <button id="new-post">Insert new post-it!</button> --}}
     </div>
 
     {{#each stickyNote}}
@@ -22,5 +22,37 @@
 
     </div>
     {{/each}}
+
+    <div class="side-panel">
+      <div class="side-panel-icon">
+        <button id="new-post">
+        <i class="fas fa-location-arrow"></i>
+        </button>
+      </div>
+      <div class="side-panel-icon">
+        <button id="new-post">
+        <i class="fas fa-location-arrow"></i>
+        </button>
+      </div>
+      <div class="side-panel-icon">
+        <button id="new-post">
+        <i class="fas fa-location-arrow"></i>
+        </button>
+      </div>
+      <div class="side-panel-icon">
+        <button id="new-post">
+        <i class="fas fa-location-arrow"></i>
+        </button>
+      </div>
+
+    </div>
   </div>
+
+  {{!-- <div class="row">
+    <div class="col">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><button id="new-post"><i class="fas fa-location-arrow"></i></button></a>
+      </div>
+    </div>
+  </div> --}}
 </div>
