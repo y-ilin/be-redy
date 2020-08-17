@@ -5,7 +5,17 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
-  // InteractJS library code
+  // Click event for new note.
+  $(document).on("click", "#new-post", newNote);
+
+  // Function to add note to db and reload page.
+  function newNote(stickyNote) {
+    $.post("/api/notes", () => {
+      return stickyNote;
+    }).then(location.reload());
+  }
+
+  /////////////// Start of InteractJS library code ///////////////
 
   // target elements with the "draggable" class
   interact(".draggable").draggable({
@@ -28,22 +38,14 @@ $(document).ready(() => {
       // call this function on every dragend event
       end(event) {
         console.log(event);
-        //     const textEl = event.target.querySelector("p");
-        //     textEl &&
-        //       (textEl.textContent =
-        //         "moved a distance of " +
-        //         Math.sqrt(
-        //           (Math.pow(event.pageX - event.x0, 2) +
-        //             Math.pow(event.pageY - event.y0, 2)) |
-        //             0
-        //         ).toFixed(2) +
-        //         "px");
       }
     }
   });
 
   function dragMoveListener(event) {
     const target = event.target;
+    // id = target.getAttribute("id");
+
     // keep the dragged position in the data-x/data-y attributes
     const x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
     const y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
@@ -56,9 +58,47 @@ $(document).ready(() => {
     target.setAttribute("data-x", x);
     target.setAttribute("data-y", y);
 
-    // Add automatically changing AJAX request here...
+    // const coords = {
+    //   id: id,
+    //   x: x,
+    //   y: y
+    // };
+
+    // This function updates a note position in our database
+    // updateNoteCoordinates(coords);
   }
+
+  // This function updates a note position in our database
+  // const updateNoteCoordinates = coords => {
+  //   $.ajax({
+  //     method: "PUT",
+  //     url: "/api/notes",
+  //     data: coords
+  //   }).then(() => {
+  //     location.reload();
+  //   });
+  // };
 
   // this function is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
+
+  //////////////// End of InteractJS library code ////////////////
+
+  // Event listener listening for a click on any delete button, then will run deleteSticky
+  $(document).on("click", ".deleteButton", deleteSticky);
+
+  function deleteSticky(event) {
+    event.stopPropagation();
+    const closestSticky = $(this).closest(".draggable")[0];
+    const id = $(closestSticky).attr("id");
+    console.log("sticky id is " + id);
+
+    $.ajax({
+      method: "DELETE",
+      url: "/api/notes/" + id
+    }).then(() => {
+      console.log("sticky deleted");
+      location.reload();
+    });
+  }
 });
