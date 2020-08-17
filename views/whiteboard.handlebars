@@ -13,12 +13,12 @@
       <h2>Welcome <span class="member-name"></span></h2>
       <button id="new-post">Insert new post-it!</button>
     </div>
+    {{#each stickyNote}}
+    <div id="{{ this.id }}" class="draggable" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
+      data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
+      <div class="deleteButton"><i class="fas fa-times"></i></div>
+      <p> {{ this.noteText }} </p>
+    </div>
+    {{/each}}
   </div>
-  {{#each stickyNote}}
-  <div class="draggable" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
-    data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}" data-id="{{ this.id }}">
-    <div class="deleteButton"><i class="fas fa-times"></i></div>
-    <p> {{ this.noteText }} </p>
-  </div>
-  {{/each}}
 </div>
