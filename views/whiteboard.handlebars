@@ -15,8 +15,9 @@
       data-y="{{ this.yCoord }}">
 
       <div class="deleteButton"><i class="fas fa-times"></i></div>
-      <div class="voteButton"><i class="fas fa-star"></i>
-        <p class="voteCount"></p>
+      <div class="voteButton">
+        <i class="fas fa-star voteStar"></i>
+        <p class="voteCount">{{ this.Users.length }}</p>
       </div>
       <p class="textInput" contentEditable="true"> {{ this.noteText }} </p>
 

@@ -27,7 +27,8 @@ module.exports = function(app) {
 
   // Modify this route to change data to the whiteboard page through handlebars.js
   app.get("/whiteboard", isAuthenticated, (req, res) => {
-    db.StickyNote.findAll({}).then(data => {
+    // Find each sticky, and include the users that have voted for each
+    db.StickyNote.findAll({ include: db.User }).then(data => {
       const hbsObject = {
         stickyNote: data
       };
