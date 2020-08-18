@@ -40,11 +40,9 @@ form.login {
 
 .side-panel-icon {
   margin: 2px;
+  padding: 15px 0px 15px 0px;
 }
 
-.side-panel-button {
-  height: 40px;
-  width: 40px;
-  border-color: #FCFCFC;
-  background-color: #FCFCFC;
+.side-panel-icon img {
+  cursor: pointer;
 }
