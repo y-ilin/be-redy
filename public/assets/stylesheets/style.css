@@ -39,6 +39,12 @@ form.login {
 }
 
 .side-panel-icon {
-  border: 1px solid #14C398;
   margin: 2px;
+}
+
+.side-panel-button {
+  height: 40px;
+  width: 40px;
+  border-color: #FCFCFC;
+  background-color: #FCFCFC;
 }
