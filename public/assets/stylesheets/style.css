@@ -25,3 +25,11 @@ form.login {
   left: 35px;
   color: black;
 }
+
+.voteButton {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 1.5em;
+  color: black;
+}

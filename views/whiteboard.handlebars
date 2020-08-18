@@ -19,7 +19,10 @@
       style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
       data-y="{{ this.yCoord }}">
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
-      <div class="button voteButton"><i class="fas fa-star"></i></div>
+      <div class="button voteButton"><i class="fas fa-star"></i>
+        <p class="voteCount"></p>
+      </div>
+
       <p contentEditable="true"> {{ this.noteText }} </p>
     </div>
     {{/each}}
