@@ -31,7 +31,6 @@ module.exports = function(app) {
       const hbsObject = {
         stickyNote: data
       };
-      console.log(hbsObject);
       res.render("whiteboard", hbsObject);
     });
   });
