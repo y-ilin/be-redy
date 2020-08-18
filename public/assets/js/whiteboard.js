@@ -59,9 +59,9 @@ $(document).ready(() => {
 
     // this function is used later in the resizing and gesture demos
     window.dragMoveListener = dragMoveListener;
-
-    //////////////// End of InteractJS library code ////////////////
   }
+  //////////////// End of InteractJS library code ////////////////
+
   // Event listener listening for a click on any delete button, then will run deleteSticky
   $(document).on("click", ".deleteButton", deleteSticky);
 
