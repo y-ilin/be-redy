@@ -21,6 +21,7 @@ form.login {
 
 .deleteButton {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 25px;
+  left: 35px;
+  color: black;
 }
