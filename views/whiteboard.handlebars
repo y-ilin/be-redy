@@ -9,18 +9,26 @@
 </nav>
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h2>Welcome <span class="member-name"></span></h2>
-      <button id="new-post">Insert new post-it!</button>
-    </div>
-
     {{#each stickyNote}}
-    <div id="{{ this.id }}" class="draggable thisMoves" style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
-      data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
+    <div id="{{ this.id }}" class="draggable thisMoves"
+      style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
+      data-y="{{ this.yCoord }}">
       <div class="deleteButton"><i class="fas fa-times"></i></div>
       <p class="textInput" contentEditable="true"> {{ this.noteText }} </p>
 
     </div>
     {{/each}}
+
+    <div class="side-panel">
+      <div class="side-panel-icon">
+        <img src="/assets/img/add-post-it.svg" id="new-post">
+      </div>
+      <div class="side-panel-icon">
+        <img src="/assets/img/new-comment.svg" id="new-comment">
+      </div>
+      <div class="side-panel-icon">
+        <img src="/assets/img/star.svg" id="star">
+      </div>
+    </div>
   </div>
 </div>
