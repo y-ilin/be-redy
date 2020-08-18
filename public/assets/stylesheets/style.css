@@ -22,3 +22,25 @@ form.login {
   top: 5px;
   right: 10px;
 }
+
+.side-panel {
+  position: absolute;
+  width: 48px;
+  height: 216px;
+  left: 32px;
+  top: 404px;
+  background: #FCFCFC;
+  border: 0.2px solid #EDEDED;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 3px -1px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.side-panel-icon {
+  margin: 2px;
+  padding: 15px 0px 15px 0px;
+}
+
+.side-panel-icon img {
+  cursor: pointer;
+}

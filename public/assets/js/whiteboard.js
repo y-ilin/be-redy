@@ -1,4 +1,8 @@
 $(document).ready(() => {
+  let dragged = false;
+  let textEdit = false;
+  let allData = {};
+
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(data => {
@@ -36,8 +40,8 @@ $(document).ready(() => {
       move: dragMoveListener,
 
       // call this function on every dragend event
-      end(event) {
-        console.log(event);
+      end() {
+        dragged = true;
       }
     }
   });
@@ -79,22 +83,45 @@ $(document).ready(() => {
       location.reload();
     });
   }
+
+  $(".thisMoves").on("mouseup", event => {
+    console.log(dragged);
+    if (dragged === true) {
+      sendTextData(event.currentTarget);
+    }
+  });
+
+  $(".textInput").on("click", () => {
+    textEdit = true;
+  });
+
   $(".thisMoves").on("mouseleave", event => {
-    sendTextData(event.currentTarget);
+    if (textEdit === true) {
+      sendTextData(event.currentTarget);
+    }
   });
 
   function sendTextData(element) {
-    const allData = {
-      noteText: element.children[1].innerHTML,
-      id: element.id,
-      xCoord: element.dataset.x,
-      yCoord: element.dataset.y
-    };
+    if (dragged === true) {
+      allData = {
+        id: element.id,
+        xCoord: element.dataset.x,
+        yCoord: element.dataset.y
+      };
+    }
+    if (textEdit === true) {
+      allData = {
+        noteText: element.children[1].innerHTML,
+        id: element.id
+      };
+    }
     $.ajax({
       method: "PUT",
       url: "/api/notes",
       data: allData
     }).then(() => {
+      dragged = false;
+      textEdit = false;
       location.reload();
     });
   }
