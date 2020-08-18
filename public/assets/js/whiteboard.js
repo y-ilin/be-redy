@@ -84,6 +84,7 @@ $(document).ready(() => {
     });
   }
 
+  // UPDATING the text and coordinates of the sticky note.
   $(".thisMoves").on("mouseup", event => {
     console.log(dragged);
     if (dragged === true) {

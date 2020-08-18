@@ -46,3 +46,16 @@ form.login {
 .side-panel-icon img {
   cursor: pointer;
 }
+
+.newComment {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  opacity: 0;
+}
+
+.draggable:hover .newComment {
+  opacity: 1;
+}
