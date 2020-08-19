@@ -34,6 +34,10 @@ form.login {
   place-items: center;
 }
 
+.voteStarEmpty {
+  width: 20px;
+}
+
 .voteStar {
   color: rgb(255, 166, 0);
   font-size: 1.8em;
@@ -41,9 +45,14 @@ form.login {
 
 .voteCount {
   position: absolute;
+  top: -2px;
+  right: -6px;
   margin: 0;
-  color: rgb(97, 97, 97);
-  font-size: 1.2em;
+  padding: 0 0.4em;
+  background-color: #10c398;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.8em;
 }
 
 .side-panel {
