@@ -28,6 +28,9 @@ $(document).ready(() => {
         console.log(
           `User ${data.userEmail} has voted for sticky #${data.stickyId}`
         );
+      }).then(() => {
+        // Reload the page to run through handlebars again in order to render the filled in star in place of the empty star
+        location.reload();
       });
     } catch (error) {
       console.log(error);
