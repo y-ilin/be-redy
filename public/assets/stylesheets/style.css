@@ -3,6 +3,10 @@ form.login {
   margin-top: 50px;
 }
 
+h1 {
+  font-family: Raleway Dots;
+}
+
 .landing {
   position: fixed;
   width: 608px;
@@ -19,6 +23,18 @@ form.login {
   line-height: 47px;
 
   color: #535353;
+}
+
+.login-button {
+  background: #14C398;
+  border-color: #14C398;
+  border-radius: 2px;
+  font-size: 30px;
+}
+
+.landing-login-a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .draggable {
