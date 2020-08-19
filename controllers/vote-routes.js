@@ -38,9 +38,7 @@ module.exports = function(app) {
 
       // Finding the relevant user from the User model
       const user = await findUser(req.user.id);
-      // console.log(
-      //   "user's id is: " + req.user.id + ". email is: " + req.user.email
-      // );
+
       // Adding this user to this sticky in the database (this is a Sequelize method)
       await sticky.addUser(user);
 
