@@ -11,7 +11,8 @@ module.exports = function(app) {
     db.StickyNote.create({
       noteText: "Add text here",
       xCoord: 80,
-      yCoord: 80
+      yCoord: 80,
+      noteColour: "yellow"
     }).then(data => {
       res.json(data);
     });

@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     yCoord: {
       type: DataTypes.DECIMAL
+    },
+    noteColour: {
+      type: DataTypes.STRING
     }
   });
   return StickyNote;
