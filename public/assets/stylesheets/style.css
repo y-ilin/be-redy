@@ -3,6 +3,24 @@ form.login {
   margin-top: 50px;
 }
 
+.landing {
+  position: fixed;
+  width: 608px;
+  height: 224px;  
+  margin-top: -150px;
+  margin-left: -250px;
+  left: 50%;
+  top: 50%;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 47px;
+
+  color: #535353;
+}
+
 .draggable {
   width: 200px;
   height: 200px;
