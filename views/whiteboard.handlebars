@@ -16,7 +16,13 @@
 
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
       <div class="button voteButton">
+        {{!-- If the logged in user has voted for this comment already, render the full star --}}
+        {{#if User2}}
         <i class="fas fa-star voteStar"></i>
+        {{!-- Else, render the empty star --}}
+        {{else}}
+        <img src="/assets/img/star.svg" class="voteStarEmpty">
+        {{/if}}
         <p class="voteCount">{{ this.Users.length }}</p>
       </div>
       <p class="textInput" contentEditable="true"> {{ this.noteText }} </p>
