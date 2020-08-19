@@ -15,6 +15,7 @@
       data-y="{{ this.yCoord }}">
 
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
+
       <div class="button voteButton">
         {{!-- If the logged in user has voted for this comment already, render the full star --}}
         {{#if User2}}
@@ -25,9 +26,8 @@
         {{/if}}
         <p class="voteCount">{{ this.Users.length }}</p>
       </div>
-      <p class="textInput" contentEditable="true"> {{ this.noteText }} </p>
 
-      <p contentEditable="true"> {{ this.noteText }} </p>
+      <p contentEditable="true" onkeypress="return (this.innerText.length <= 120)"> {{ this.noteText }} </p>
     </div>
     {{/each}}
 
