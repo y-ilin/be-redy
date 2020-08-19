@@ -9,6 +9,10 @@ form.login {
   margin-top: 50px;
 }
 
+.a-href:hover {
+  text-decoration: none;
+}
+
 .landing {
   position: fixed;
   width: 608px;
@@ -30,6 +34,11 @@ form.login {
 }
 
 .landing-login-a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.landing-login-a:hover {
   text-decoration: none;
   color: #ffffff;
 }
