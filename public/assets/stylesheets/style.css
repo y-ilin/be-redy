@@ -64,6 +64,7 @@ form.login {
   padding: 15px 0px 15px 0px;
 }
 
-.side-panel-icon img {
+.side-panel-icon img,
+.button {
   cursor: pointer;
 }
