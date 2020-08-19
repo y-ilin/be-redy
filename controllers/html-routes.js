@@ -32,7 +32,10 @@ module.exports = function(app) {
     // user if they have voted for each (left join of alias User2 where the id = the logged in user's id).
     db.StickyNote.findAll({
       include: [
+        // This includes an array of each user that has voted for this particular sticky.
         { model: db.User },
+        // This includes an array, it will contain the logged-in user if this user has voted for this sticky.
+        // If not, the array will be empty.
         {
           model: db.User,
           as: "User2",
