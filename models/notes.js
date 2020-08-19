@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        max: 99
+        max: 120
       }
     },
     xCoord: {
@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     yCoord: {
       type: DataTypes.DECIMAL
+    },
+    noteColour: {
+      type: DataTypes.STRING
     }
   });
   return StickyNote;
