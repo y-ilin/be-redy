@@ -3,6 +3,7 @@ $(document).ready(() => {
   $(".commentInput").on("keypress", event => {
     if (event.key === 13) {
       newComment();
+      console.log("new comment submitted");
     }
   });
 
@@ -11,11 +12,11 @@ $(document).ready(() => {
     try {
       // Getting the stickyId of the sticky clicked on
       const sticky = event.currentTarget.closest(".draggable");
-      const stickyId = $(sticky).attr("id");
+      const StickyNoteId = $(sticky).attr("id");
       const commentText = $(".commentInput").val();
 
       // Send post request to server with the stickyId and userId in order to log this comment
-      $.post("/api/comments", { stickyId, userId, commentText }, data => {
+      $.post("/api/comments", { StickyNoteId, UserId, commentText }, data => {
         // Find the comment counter for this sticky
         const stickyComment = $(sticky).find(".commentStack");
         // Render the comment count onto the comment

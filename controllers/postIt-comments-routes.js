@@ -11,8 +11,8 @@ module.exports = function(app) {
   app.post("/api/comments", (req, res) => {
     // const thisUser = req.user.email.split("@");
     // const currentUser = thisUser[0];
-    db.Comments.create({
-      comment: req.body.comment
+    db.Comment.create({
+      commentText: req.body.commentText
     }).then(data => {
       res.json(data);
     });
