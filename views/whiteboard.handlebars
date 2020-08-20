@@ -35,17 +35,13 @@
           <img class="newComment" src="/assets/img/post-it-comment.svg">
         </a>
         <div class="dropdown-menu">
-          <ul>
-            {{#each comment}}
-              {{#li}}
-                <li>{{ commentText }}</li>
-              {{/li}}
-            {{/each}}
-          </ul>
+          {{#each this.Comments}}
+          <p>{{ this.commentText }}</p>
+          <br>
+          {{/each}}
           <input placeholder="New Comment" class="commentInput">
         </div>
       </div>
-
     </div>
     {{/each}}
 
