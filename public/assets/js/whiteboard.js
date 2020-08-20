@@ -2,7 +2,7 @@ $(document).ready(() => {
   let dragged = false;
   let textEdit = false;
   let allData = {};
-  let dataC = "";
+  const noteColourId = "";
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -13,6 +13,7 @@ $(document).ready(() => {
   // Click event for new note.
   $(document).on("click", "#red,#green,#yellow", newNote);
 
+  // Set 
   $(".dropdown-menu").click(c => {
     dataC = c.target.id;
   });
@@ -23,20 +24,16 @@ $(document).ready(() => {
       noteText: "Add text here",
       xCoord: 80,
       yCoord: 80,
-      noteColour: dataC
+      noteColour: noteColourId
     };
- $.ajax({
-  method: "POST",
-  url: "/api/notes",
-  data: sticky
-}).then(() => {
-  location.reload();
-  console.log(sticky);
-});
-// $.post("/api/notes", () => {
-//   return sticky;
-// }).then(location.reload());
-
+    $.ajax({
+      method: "POST",
+      url: "/api/notes",
+      data: sticky
+    }).then(() => {
+      location.reload();
+      console.log(sticky);
+    });
   }
 
   /////////////// Start of InteractJS library code ///////////////
