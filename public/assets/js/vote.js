@@ -5,6 +5,9 @@ $(document).ready(() => {
   // Function to send POST request to server to log sticky vote
   async function voteSticky(event) {
     try {
+      // Stop propagation so the click event affects the vote button and nothing below it
+      event.stopPropagation();
+
       // Getting the stickyId of the sticky clicked on
       const sticky = event.currentTarget.closest(".draggable");
       const stickyId = $(sticky).attr("id");
@@ -24,8 +27,12 @@ $(document).ready(() => {
         // Selecting the vote button that was clicked
         const voteButtonClicked = event.currentTarget;
         const voteButtonImg = $(voteButtonClicked).find("img");
+
         // Setting its image source to the filled-in star svg
         $(voteButtonImg).attr("src", "/assets/img/filled-star.svg");
+        // Changing the vote star to have class of ".voteStar" instead of ".voteStarEmpty"
+        $(voteButtonImg).removeClass("voteStarEmpty");
+        $(voteButtonImg).addClass("voteStar");
       });
     } catch (error) {
       console.log(error);
