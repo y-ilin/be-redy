@@ -125,7 +125,6 @@ $(document).ready(() => {
     }).then(() => {
       dragged = false;
       textEdit = false;
-      location.reload();
     });
   }
 });
