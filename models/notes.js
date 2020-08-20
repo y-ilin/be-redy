@@ -17,5 +17,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     }
   });
+  StickyNote.associate = models => {
+    StickyNote.hasMany(models.Comment);
+  };
   return StickyNote;
 };

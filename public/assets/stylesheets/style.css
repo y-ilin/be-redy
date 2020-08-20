@@ -53,7 +53,7 @@ form.login {
   user-select: none;
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  position: fixed;
+  position: relative;
 }
 
 .deleteButton {
@@ -113,4 +113,17 @@ form.login {
 .side-panel-icon img,
 .button {
   cursor: pointer;
+}
+
+.newComment {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  opacity: 0;
+}
+
+.draggable:hover .newComment {
+  opacity: 1;
 }
