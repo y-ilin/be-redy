@@ -1,4 +1,3 @@
-// Requiring our models and passport as we've configured it
 const db = require("../models");
 
 module.exports = function(app) {
@@ -16,5 +15,19 @@ module.exports = function(app) {
     }).then(data => {
       res.json(data);
     });
+  });
+
+  app.delete("/api/comments/:id", (req, res) => {
+    db.Comment.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(comments => {
+        res.json(comments);
+      })
+      .catch(err => {
+        res.json(err);
+      });
   });
 };

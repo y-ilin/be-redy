@@ -129,14 +129,4 @@ $(document).ready(() => {
       location.reload();
     });
   }
-  function checkMessage() {
-    const pTag = $(".thisComment");
-    for (i = 0; i < pTag.length; i++) {
-      if (pTag[i].innerHTML.length > 0) {
-        $(".newComment").css("opacity", "1");
-      }
-    }
-  }
-
-  window.onload = checkMessage();
 });

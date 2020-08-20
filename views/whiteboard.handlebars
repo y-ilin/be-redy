@@ -33,10 +33,11 @@
       <div class="btn-group dropright">
         <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img class="newComment" src="/assets/img/post-it-comment.svg">
+          <p class="commentCount">{{ this.Comments.length }}</p>
         </a>
         <div class="dropdown-menu">
           {{#each this.Comments}}
-            <p class="thisComment">{{ this.commentText }}</p>
+            <p id="{{ this.id }}" class="thisComment">{{ this.commentText }}<button class="commentDelete"><i class="fas fa-times"></i></button></p>
             <hr>
           {{/each}}
           <input id="{{ this.id }}" placeholder="New Comment" class="commentInput">

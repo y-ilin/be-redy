@@ -62,14 +62,14 @@ form.login {
   position: absolute;
   top: 25px;
   left: 35px;
-  color: black;
+  color: grey;
 }
 
 /* Voting on a note */
 .voteButton {
   position: absolute;
   top: 10px;
-  right: 30px;
+  right: 26px;
   display: grid;
   place-items: center;
 }
@@ -85,10 +85,11 @@ form.login {
   right: -6px;
   margin: 0;
   padding: 0 0.4em;
-  background-color: #10c398;
+  background-color: #d62727;
   border-radius: 20px;
   color: white;
   font-size: 0.8em;
+  opacity: 0;
 }
 
 /* Side Panel */
@@ -117,18 +118,19 @@ form.login {
 
 
 /* Comments */
+.dropright {
+  margin-left: 101px;
+  margin-top: -50px;
+}
 .dropdown-menu {
   z-index: 99;
   border-radius: 8px;
   padding: 8px !important;
+  position: absolute;
 }
 .newComment {
   width: 24px;
   height: 24px;
-  position: absolute;
-  bottom: -10px;
-  right: 20px;
-  opacity: 0;
 }
 .commentInput {
   width: 100%;
@@ -141,10 +143,42 @@ form.login {
   padding-left: 8px;
 }
 
-.draggable:hover .newComment {
+/* .draggable:hover .newComment {
   opacity: 1;
-}
+} */
 
 hr {
   margin: 8px 0px !important;
 }
+
+/* Comment Delete */
+.commentDelete {
+  position: absolute;
+  right: 8px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+}
+
+.thisComment:hover .commentDelete {
+  opacity: 1;
+}
+
+/* Comment Count */
+.commentCount {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  margin: 0;
+  padding: 0 0.4em;
+  background-color: #d62727;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 400;
+  opacity: 0;
+}
+
+/* .draggable:hover .commentCount {
+  opacity: 1;
+} */
