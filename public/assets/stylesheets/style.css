@@ -16,7 +16,7 @@ form.login {
 .landing {
   position: fixed;
   width: 608px;
-  height: 224px;  
+  height: 224px;
   margin-top: -150px;
   margin-left: -250px;
   left: 50%;
@@ -27,8 +27,8 @@ form.login {
 }
 
 #login-button {
-  background: #14C398;
-  border-color: #14C398;
+  background: #14c398;
+  border-color: #14c398;
   border-radius: 2px;
   font-size: 30px;
 }
@@ -52,8 +52,8 @@ form.login {
   padding: 35px;
   touch-action: none;
   user-select: none;
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
+  /* -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px); */
   position: relative;
 }
 
@@ -178,7 +178,3 @@ hr {
   font-weight: 400;
   opacity: 0;
 }
-
-/* .draggable:hover .commentCount {
-  opacity: 1;
-} */
