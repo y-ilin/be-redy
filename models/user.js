@@ -31,5 +31,13 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = models => {
+    // // In order to create a voting system, we need to create a many-to-many association with Sequelize between our
+    // // StickyNote and User models. This way, we can track which users vote for which stickies.
+    // // Users can vote for many stickies, and each sticky can be voted for by many users.
+    User.belongsToMany(models.StickyNote, { through: "Vote" });
+  };
+
   return User;
 };
