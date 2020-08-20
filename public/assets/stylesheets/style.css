@@ -71,13 +71,9 @@ form.login {
   place-items: center;
 }
 
+.voteStar,
 .voteStarEmpty {
   width: 20px;
-}
-
-.voteStar {
-  color: rgb(255, 166, 0);
-  font-size: 1.8em;
 }
 
 .voteCount {
