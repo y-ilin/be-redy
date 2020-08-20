@@ -55,7 +55,6 @@ module.exports = function(app) {
         }
       ]
     }).then(data => {
-      console.log(data[0].Comments[0].commentText);
       const hbsObject = {
         stickyNote: data
       };
