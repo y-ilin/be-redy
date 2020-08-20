@@ -10,9 +10,9 @@
 <div class="container">
   <div class="row">
     {{#each stickyNote}}
-    <div id="{{ this.id }}" class="draggable thisMoves"
-      style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
-      data-y="{{ this.yCoord }}">
+    <div id="{{ this.id }}" class="draggable thisMoves" 
+      style="background-image: url(assets/img/{{this.noteColour}}.png)" "transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
+      data-y="{{ this.yCoord }}" >
 
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
 

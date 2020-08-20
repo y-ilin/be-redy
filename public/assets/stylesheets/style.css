@@ -1,13 +1,52 @@
+body {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+.a-href:hover {
+  text-decoration: none;
+}
+
+.landing {
+  position: fixed;
+  width: 608px;
+  height: 224px;  
+  margin-top: -150px;
+  margin-left: -250px;
+  left: 50%;
+  top: 50%;
+  font-size: 40px;
+  line-height: 47px;
+  color: #535353;
+}
+
+#login-button {
+  background: #14C398;
+  border-color: #14C398;
+  border-radius: 2px;
+  font-size: 30px;
+}
+
+.landing-login-a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.landing-login-a:hover {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .draggable {
   width: 200px;
   height: 200px;
   min-height: 6.5em;
-  background-image: url("../stickynote.png");
   border-radius: 0.75em;
   padding: 35px;
   touch-action: none;
