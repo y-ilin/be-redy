@@ -39,6 +39,7 @@ app.set("view engine", "handlebars");
 require("./controllers/html-routes.js")(app);
 require("./controllers/api-routes.js")(app);
 require("./controllers/postIt-routes.js")(app);
+require("./controllers/postIt-comments-routes.js")(app);
 require("./controllers/vote-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success

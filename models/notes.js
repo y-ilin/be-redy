@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
-        max: 99
+        max: 120
       }
     },
     xCoord: {
@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     yCoord: {
       type: DataTypes.DECIMAL
+    },
+    noteColour: {
+      type: DataTypes.STRING
     }
   });
 
@@ -23,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     // Create this alias User2 for User, which we will use in "html-routes.js" to join the User table to the Sticky table
     // a second time where the logged-in user has already voted for each sticky.
     StickyNote.belongsToMany(models.User, { as: "User2", through: "Vote" });
+    StickyNote.hasMany(models.Comment);
   };
 
   return StickyNote;
