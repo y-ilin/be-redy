@@ -10,9 +10,9 @@
 <div class="container">
   <div class="row">
     {{#each stickyNote}}
-    <div id="{{ this.id }}" class="draggable thisMoves" 
-      style="background-image: url(assets/img/{{this.noteColour}}.png)" "transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
-      data-y="{{ this.yCoord }}" >
+    <div id="{{ this.id }}" class="draggable thisMoves"
+      style="background-image: url(assets/img/{{this.noteColour}}.png)" "transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
+      data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
 
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
 
@@ -28,18 +28,19 @@
       </div>
 
       <p contentEditable="true" onkeypress="return (this.innerText.length <= 120)"> {{ this.noteText }} </p>
-      
+
       {{!-- Drop-right menu for the comments to show in, with an input box to add a new comment --}}
       <div class="btn-group dropright">
-        <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
           <img class="newComment" src="/assets/img/post-it-comment.svg">
         </a>
         <div class="dropdown-menu">
           <ul>
             {{#each comment}}
-              {{#li}}
-                <li>{{ commentText }}</li>
-              {{/li}}
+            {{#li}}
+            <li>{{ commentText }}</li>
+            {{/li}}
             {{/each}}
           </ul>
           <input placeholder="New Comment" class="commentInput">
@@ -51,7 +52,19 @@
 
     <div class="side-panel">
       <div class="side-panel-icon">
-        <img src="/assets/img/add-post-it.svg" id="new-post">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="/assets/img/add-post-it.svg">
+
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a id="yellow" onclick="click">Yellow</a>
+            <a id="red" onclick="click">Red</a>
+            <a id="green" onclick="click">Green</a>
+          </div>
+        </div>
+        {{!-- <" id="new-post" > --}}
       </div>
       <div class="side-panel-icon">
         <img src="/assets/img/new-comment.svg" id="new-comment">

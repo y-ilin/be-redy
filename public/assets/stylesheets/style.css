@@ -127,3 +127,17 @@ form.login {
 .draggable:hover .newComment {
   opacity: 1;
 }
+
+.btn img {
+  height: 42px;
+  width: 42px;
+}
+
+.btn { 
+  background-color: #fcfcfc;
+  padding: 0px 0px 0px;
+}
+
+#dropdownMenuButton {
+  padding: 0px;
+}

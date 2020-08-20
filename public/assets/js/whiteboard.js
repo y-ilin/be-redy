@@ -2,6 +2,7 @@ $(document).ready(() => {
   let dragged = false;
   let textEdit = false;
   let allData = {};
+  let dataC = "";
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -10,13 +11,32 @@ $(document).ready(() => {
   });
 
   // Click event for new note.
-  $(document).on("click", "#new-post", newNote);
+  $(document).on("click", "#red,#green,#yellow", newNote);
+
+  $(".dropdown-menu").click(c => {
+    dataC = c.target.id;
+  });
 
   // Function to add note to db and reload page.
-  function newNote(stickyNote) {
-    $.post("/api/notes", () => {
-      return stickyNote;
-    }).then(location.reload());
+  function newNote() {
+    const sticky = {
+      noteText: "Add text here",
+      xCoord: 80,
+      yCoord: 80,
+      noteColour: dataC
+    };
+ $.ajax({
+  method: "POST",
+  url: "/api/notes",
+  data: sticky
+}).then(() => {
+  location.reload();
+  console.log(sticky);
+});
+// $.post("/api/notes", () => {
+//   return sticky;
+// }).then(location.reload());
+
   }
 
   /////////////// Start of InteractJS library code ///////////////
