@@ -20,8 +20,12 @@ $(document).ready(() => {
           `User ${data.userEmail} has voted for sticky #${data.stickyId}`
         );
       }).then(() => {
-        // Reload the page to run through handlebars again in order to render the filled in star in place of the empty star
-        location.reload();
+        // Replace the empty star with a filled-in star on the DOM
+        // Selecting the vote button that was clicked
+        const voteButtonClicked = event.currentTarget;
+        const voteButtonImg = $(voteButtonClicked).find("img");
+        // Setting its image source to the filled-in star svg
+        $(voteButtonImg).attr("src", "/assets/img/filled-star.svg");
       });
     } catch (error) {
       console.log(error);
