@@ -9,10 +9,10 @@ module.exports = function(app) {
   });
 
   app.post("/api/comments", (req, res) => {
-    // const thisUser = req.user.email.split("@");
-    // const currentUser = thisUser[0];
     db.Comment.create({
-      commentText: req.body.commentText
+      commentText: req.body.commentText,
+      StickyNoteId: req.body.StickyNoteId,
+      UserId: req.user.id
     }).then(data => {
       res.json(data);
     });

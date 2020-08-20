@@ -9,10 +9,10 @@
 </nav>
 <div class="container">
   <div class="row">
-    {{#each stickyNote}}
+    {{#each stickyNote }}
     <div id="{{ this.id }}" class="draggable thisMoves" 
-      style="background-image: url(assets/img/{{this.noteColour}}.png)" "transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
-      data-y="{{ this.yCoord }}" >
+      style="background-image: url(assets/img/{{ this.noteColour }}.png);" "transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
+      data-y="{{ this.yCoord }}">
 
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
 
@@ -36,10 +36,10 @@
         </a>
         <div class="dropdown-menu">
           {{#each this.Comments}}
-          <p>{{ this.commentText }}</p>
-          <br>
+            <p class="thisComment">{{ this.commentText }}</p>
+            <hr>
           {{/each}}
-          <input placeholder="New Comment" class="commentInput">
+          <input id="{{ this.id }}" placeholder="New Comment" class="commentInput">
         </div>
       </div>
     </div>

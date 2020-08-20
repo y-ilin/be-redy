@@ -1,5 +1,5 @@
 body {
-  font-family: Roboto;
+  font-family: "Sans-serif","Roboto";
   font-style: normal;
   font-weight: normal;
 }
@@ -43,6 +43,7 @@ form.login {
   color: #ffffff;
 }
 
+/* InteractJS draggable CSS */
 .draggable {
   width: 200px;
   height: 200px;
@@ -56,6 +57,7 @@ form.login {
   position: relative;
 }
 
+/* Delete Button */
 .deleteButton {
   position: absolute;
   top: 25px;
@@ -63,6 +65,7 @@ form.login {
   color: black;
 }
 
+/* Voting on a note */
 .voteButton {
   position: absolute;
   top: 10px;
@@ -92,6 +95,7 @@ form.login {
   font-size: 0.8em;
 }
 
+/* Side Panel */
 .side-panel {
   position: absolute;
   width: 48px;
@@ -115,6 +119,13 @@ form.login {
   cursor: pointer;
 }
 
+
+/* Comments */
+.dropdown-menu {
+  z-index: 99;
+  border-radius: 8px;
+  padding: 8px !important;
+}
 .newComment {
   width: 24px;
   height: 24px;
@@ -123,7 +134,21 @@ form.login {
   right: 20px;
   opacity: 0;
 }
+.commentInput {
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+}
+
+::placeholder {
+  color: #c4c4c4;
+  padding-left: 8px;
+}
 
 .draggable:hover .newComment {
   opacity: 1;
+}
+
+hr {
+  margin: 8px 0px !important;
 }
