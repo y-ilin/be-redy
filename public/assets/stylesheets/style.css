@@ -19,8 +19,38 @@ form.login {
 
 .deleteButton {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: 25px;
+  left: 35px;
+  color: black;
+}
+
+.voteButton {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.voteStarEmpty {
+  width: 20px;
+}
+
+.voteStar {
+  color: rgb(255, 166, 0);
+  font-size: 1.8em;
+}
+
+.voteCount {
+  position: absolute;
+  top: -2px;
+  right: -6px;
+  margin: 0;
+  padding: 0 0.4em;
+  background-color: #10c398;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.8em;
 }
 
 .side-panel {
@@ -29,8 +59,8 @@ form.login {
   height: 216px;
   left: 32px;
   top: 404px;
-  background: #FCFCFC;
-  border: 0.2px solid #EDEDED;
+  background: #fcfcfc;
+  border: 0.2px solid #ededed;
   box-sizing: border-box;
   box-shadow: 4px 4px 3px -1px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
@@ -41,7 +71,8 @@ form.login {
   padding: 15px 0px 15px 0px;
 }
 
-.side-panel-icon img {
+.side-panel-icon img,
+.button {
   cursor: pointer;
 }
 

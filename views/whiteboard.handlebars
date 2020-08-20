@@ -13,9 +13,39 @@
     <div id="{{ this.id }}" class="draggable thisMoves"
       style="transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
       data-y="{{ this.yCoord }}">
-      <div class="deleteButton"><i class="fas fa-times"></i></div>
+
+      <div class="button deleteButton"><i class="fas fa-times"></i></div>
+
+      <div class="button voteButton">
+        {{!-- If the logged-in user has voted for this comment already, render the full star --}}
+        {{#if User2}}
+        <i class="fas fa-star voteStar"></i>
+        {{!-- Else, render the empty star --}}
+        {{else}}
+        <img src="/assets/img/star.svg" class="voteStarEmpty">
+        {{/if}}
+        <p class="voteCount">{{ this.Users.length }}</p>
+      </div>
+
       <p contentEditable="true" onkeypress="return (this.innerText.length <= 120)"> {{ this.noteText }} </p>
-      <img class="newComment" src="/assets/img/post-it-comment.svg">
+      
+      {{!-- Drop-right menu for the comments to show in, with an input box to add a new comment --}}
+      <div class="btn-group dropright">
+        <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="newComment" src="/assets/img/post-it-comment.svg">
+        </a>
+        <div class="dropdown-menu">
+          <ul>
+            {{#each comment}}
+            {{#li}}
+            <li>{{ commentText }}</li>
+            {{/li}}
+            {{/each}}
+          </ul>
+          <input placeholder="New Comment" class="commentInput">
+        </div>
+      </div>
+
     </div>
     {{/each}}
 

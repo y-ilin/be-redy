@@ -1,14 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
-  const Comments = sequelize.define("Comments", {
-    comments: {
+  const Comment = sequelize.define("Comment", {
+    comment: {
       type: DataTypes.STRING
-    },
-    userId: {
-      type: DataTypes.INTEGER
-    },
-    stickyNotesId: {
-      type: DataTypes.INTEGER
     }
   });
-  return Comments;
+  Comment.associate = models => {
+    Comment.belongsTo(models.StickyNote);
+    Comment.belongsTo(models.User);
+  };
+  return Comment;
 };
