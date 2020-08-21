@@ -2,7 +2,7 @@ $(document).ready(() => {
   let dragged = false;
   let textEdit = false;
   let allData = {};
-  let noteColour = "";
+  const noteColour = "";
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
