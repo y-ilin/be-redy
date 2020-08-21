@@ -43,6 +43,12 @@ form.login {
   color: #ffffff;
 }
 
+#form-button {
+  background: #14c398;
+  border-color: #14c398;
+  color: #ffffff;
+}
+
 /* InteractJS draggable CSS */
 .draggable {
   width: 200px;
