@@ -115,7 +115,7 @@ $(document).ready(() => {
     }
     if (textEdit === true) {
       allData = {
-        noteText: element.children[1].innerHTML,
+        noteText: element.children[2].innerHTML,
         id: element.id
       };
     }
