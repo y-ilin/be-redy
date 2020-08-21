@@ -46,12 +46,9 @@ $(document).ready(() => {
 
   function countStars() {
     const voteCount = $(".voteCount");
-    console.log(voteCount);
     for (let i = 0; i < voteCount.length; i++) {
-      console.log(voteCount[i].innerText);
       if (parseInt(voteCount[i].innerText) > 0) {
         voteCount[i].setAttribute("style", "opacity: 1");
-        console.log(voteCount[i]);
       }
     }
   }

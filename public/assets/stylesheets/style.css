@@ -77,6 +77,13 @@ form.login {
 .voteStar,
 .voteStarEmpty {
   width: 20px;
+  opacity: 0.3;
+}
+.voteStar:hover {
+  opacity: 1;
+}
+.voteStarEmpty:hover {
+  opacity: 1;
 }
 
 .voteCount {
@@ -119,7 +126,7 @@ form.login {
 
 /* Comments */
 .dropright {
-  margin-left: 101px;
+  margin-left: 104px;
   margin-top: -50px;
 }
 .dropdown-menu {
@@ -129,8 +136,12 @@ form.login {
   position: absolute;
 }
 .newComment {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+.newComment:hover {
+  opacity: 1;
 }
 .commentInput {
   width: 100%;
@@ -142,10 +153,6 @@ form.login {
   color: #c4c4c4;
   padding-left: 8px;
 }
-
-/* .draggable:hover .newComment {
-  opacity: 1;
-} */
 
 hr {
   margin: 8px 0px !important;
@@ -165,12 +172,12 @@ hr {
 }
 
 /* New Note Button */
-.btn img {
+.newStickyNoteButton img {
   height: 42px;
   width: 42px;
 }
 
-.btn { 
+.newStickyNoteButton { 
   background-color: #fcfcfc;
   padding: 0px 0px 0px;
 }
