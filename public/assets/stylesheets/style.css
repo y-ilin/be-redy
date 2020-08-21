@@ -1,5 +1,5 @@
 body {
-  font-family: Roboto;
+  font-family: "Sans-serif","Roboto";
   font-style: normal;
   font-weight: normal;
 }
@@ -16,7 +16,7 @@ form.login {
 .landing {
   position: fixed;
   width: 608px;
-  height: 224px;  
+  height: 224px;
   margin-top: -150px;
   margin-left: -250px;
   left: 50%;
@@ -27,8 +27,8 @@ form.login {
 }
 
 #login-button {
-  background: #14C398;
-  border-color: #14C398;
+  background: #14c398;
+  border-color: #14c398;
   border-radius: 2px;
   font-size: 30px;
 }
@@ -43,6 +43,7 @@ form.login {
   color: #ffffff;
 }
 
+/* InteractJS draggable CSS */
 .draggable {
   width: 200px;
   height: 200px;
@@ -51,33 +52,31 @@ form.login {
   padding: 35px;
   touch-action: none;
   user-select: none;
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
+  /* -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px); */
   position: relative;
 }
 
+/* Delete Button */
 .deleteButton {
   position: absolute;
   top: 25px;
   left: 35px;
-  color: black;
+  color: grey;
 }
 
+/* Voting on a note */
 .voteButton {
   position: absolute;
   top: 10px;
-  right: 30px;
+  right: 26px;
   display: grid;
   place-items: center;
 }
 
+.voteStar,
 .voteStarEmpty {
   width: 20px;
-}
-
-.voteStar {
-  color: rgb(255, 166, 0);
-  font-size: 1.8em;
 }
 
 .voteCount {
@@ -86,12 +85,14 @@ form.login {
   right: -6px;
   margin: 0;
   padding: 0 0.4em;
-  background-color: #10c398;
+  background-color: #d62727;
   border-radius: 20px;
   color: white;
   font-size: 0.8em;
+  opacity: 0;
 }
 
+/* Side Panel */
 .side-panel {
   position: absolute;
   width: 48px;
@@ -115,19 +116,55 @@ form.login {
   cursor: pointer;
 }
 
+
+/* Comments */
+.dropright {
+  margin-left: 101px;
+  margin-top: -50px;
+}
+.dropdown-menu {
+  z-index: 99;
+  border-radius: 8px;
+  padding: 8px !important;
+  position: absolute;
+}
 .newComment {
   width: 24px;
   height: 24px;
+}
+.commentInput {
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+}
+
+::placeholder {
+  color: #c4c4c4;
+  padding-left: 8px;
+}
+
+/* .draggable:hover .newComment {
+  opacity: 1;
+} */
+
+hr {
+  margin: 8px 0px !important;
+}
+
+/* Comment Delete */
+.commentDelete {
   position: absolute;
-  bottom: -10px;
-  right: 20px;
+  right: 8px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
   opacity: 0;
 }
 
-.draggable:hover .newComment {
+.thisComment:hover .commentDelete {
   opacity: 1;
 }
 
+/* New Note Button */
 .btn img {
   height: 42px;
   width: 42px;
@@ -140,4 +177,19 @@ form.login {
 
 #dropdownMenuButton {
   padding: 0px;
+}
+
+/* Comment Count */
+.commentCount {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  margin: 0;
+  padding: 0 0.4em;
+  background-color: #d62727;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 400;
+  opacity: 0;
 }

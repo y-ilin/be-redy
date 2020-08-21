@@ -1,4 +1,3 @@
-// Requiring our models and passport as we've configured it
 const db = require("../models");
 
 module.exports = function(app) {
@@ -9,12 +8,26 @@ module.exports = function(app) {
   });
 
   app.post("/api/comments", (req, res) => {
-    // const thisUser = req.user.email.split("@");
-    // const currentUser = thisUser[0];
     db.Comment.create({
-      commentText: req.body.commentText
+      commentText: req.body.commentText,
+      StickyNoteId: req.body.StickyNoteId,
+      UserId: req.user.id
     }).then(data => {
       res.json(data);
     });
+  });
+
+  app.delete("/api/comments/:id", (req, res) => {
+    db.Comment.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(comments => {
+        res.json(comments);
+      })
+      .catch(err => {
+        res.json(err);
+      });
   });
 };

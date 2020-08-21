@@ -11,7 +11,7 @@
   <div class="row">
     {{#each stickyNote}}
     <div id="{{ this.id }}" class="draggable thisMoves"
-      style="background-image: url(assets/img/{{this.noteColour}}.png)" "transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
+      style="background-image: url(assets/img/{{this.noteColour}}.png); transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
       data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
 
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
@@ -19,7 +19,7 @@
       <div class="button voteButton">
         {{!-- If the logged-in user has voted for this comment already, render the full star --}}
         {{#if User2}}
-        <i class="fas fa-star voteStar"></i>
+        <img src="/assets/img/filled-star.svg" class="voteStar">
         {{!-- Else, render the empty star --}}
         {{else}}
         <img src="/assets/img/star.svg" class="voteStarEmpty">
@@ -34,19 +34,16 @@
         <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
           <img class="newComment" src="/assets/img/post-it-comment.svg">
+          <p class="commentCount">{{ this.Comments.length }}</p>
         </a>
         <div class="dropdown-menu">
-          <ul>
-            {{#each comment}}
-            {{#li}}
-            <li>{{ commentText }}</li>
-            {{/li}}
-            {{/each}}
-          </ul>
-          <input placeholder="New Comment" class="commentInput">
+          {{#each this.Comments}}
+            <p id="{{ this.id }}" class="thisComment">{{ this.commentText }}<button class="commentDelete"><i class="fas fa-times"></i></button></p>
+            <hr>
+          {{/each}}
+          <input id="{{ this.id }}" placeholder="New Comment" class="commentInput">
         </div>
       </div>
-
     </div>
     {{/each}}
 
