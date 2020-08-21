@@ -172,12 +172,12 @@ hr {
 }
 
 /* New Note Button */
-.btn img {
+.newStickyNoteButton img {
   height: 42px;
   width: 42px;
 }
 
-.btn { 
+.newStickyNoteButton { 
   background-color: #fcfcfc;
   padding: 0px 0px 0px;
 }
