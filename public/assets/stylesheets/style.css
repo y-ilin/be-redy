@@ -1,18 +1,25 @@
+/* General Styles */
 body {
   font-family: "Sans-serif","Roboto";
   font-style: normal;
   font-weight: normal;
 }
 
+/* Login & Signup form */
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
-.a-href:hover {
-  text-decoration: none;
+#form-button {
+  background: #14c398;
+  border-color: #14c398;
+  color: #ffffff;
 }
 
+/* Landing Page Styles */
+
+/* Main DIV */
 .landing {
   position: fixed;
   width: 608px;
@@ -26,6 +33,12 @@ form.login {
   color: #535353;
 }
 
+/* Removing underline on hover of Click HERE */
+.a-href:hover {
+  text-decoration: none;
+}
+
+/* Login Button */
 #login-button {
   background: #14c398;
   border-color: #14c398;
@@ -33,6 +46,7 @@ form.login {
   font-size: 30px;
 }
 
+/* Anchor tag in Login Button */
 .landing-login-a {
   text-decoration: none;
   color: #ffffff;
@@ -40,12 +54,6 @@ form.login {
 
 .landing-login-a:hover {
   text-decoration: none;
-  color: #ffffff;
-}
-
-#form-button {
-  background: #14c398;
-  border-color: #14c398;
   color: #ffffff;
 }
 
