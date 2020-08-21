@@ -139,7 +139,7 @@ form.login {
 /* Comments */
 .dropright {
   margin-left: 104px;
-  margin-top: -50px;
+  margin-top: -5px;
 }
 .dropdown-menu {
   z-index: 99;
@@ -168,6 +168,13 @@ form.login {
 
 hr {
   margin: 8px 0px !important;
+}
+
+.textInput {
+  position: absolute;
+  top: 38px;
+  right: 38px;
+  left: 38px;
 }
 
 /* Comment Delete */
