@@ -24,8 +24,13 @@ $(document).ready(() => {
         // Find the star vote counter for this sticky
         const stickyStar = $(sticky).find(".voteCount");
 
-        // Render the vote count onto the star
+        // Render the vote count onto the star, and set opacity according to whether the count is at least 1 or not.
         stickyStar.html(data.stickyVoteCount);
+        if (data.stickyVoteCount > 0) {
+          $(stickyStar).attr("style", "opacity: 1");
+        } else {
+          $(stickyStar).attr("style", "opacity: 0");
+        }
       }).then(data => {
         if (voteFor) {
           // If the user is adding a vote, replace the empty star with a filled-in star on the DOM by changing its image source
