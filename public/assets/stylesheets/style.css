@@ -60,9 +60,13 @@ form.login {
 /* Delete Button */
 .deleteButton {
   position: absolute;
-  top: 25px;
-  left: 35px;
-  color: grey;
+  top: 15px;
+  left: 25px;
+  color: #525252;
+  opacity: 0;
+}
+.draggable:hover .deleteButton {
+  opacity: 1;
 }
 
 /* Voting on a note */
