@@ -1,5 +1,5 @@
 body {
-  font-family: "Sans-serif","Roboto";
+  font-family: "Sans-serif", "Roboto";
   font-style: normal;
   font-weight: normal;
 }
@@ -80,7 +80,10 @@ form.login {
   place-items: center;
 }
 
-.voteStar,
+.voteStar {
+  width: 20px;
+}
+
 .voteStarEmpty {
   width: 20px;
   opacity: 0.3;
@@ -128,7 +131,6 @@ form.login {
 .button {
   cursor: pointer;
 }
-
 
 /* Comments */
 .dropright {
@@ -183,7 +185,7 @@ hr {
   width: 42px;
 }
 
-.newStickyNoteButton { 
+.newStickyNoteButton {
   background-color: #fcfcfc;
   padding: 0px 0px 0px;
 }
