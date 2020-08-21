@@ -49,6 +49,9 @@ module.exports = function(app) {
           as: "User2",
           where: { id: req.user.id },
           required: false
+        },
+        {
+          model: db.Comment
         }
       ]
     }).then(data => {

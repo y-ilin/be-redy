@@ -56,8 +56,9 @@ $(document).ready(() => {
       move: dragMoveListener,
 
       // call this function on every dragend event
-      end() {
+      end(event) {
         dragged = true;
+        sendTextData(event.currentTarget);
       }
     }
   });
@@ -100,14 +101,13 @@ $(document).ready(() => {
     });
   }
 
-  // UPDATING the text and coordinates of the sticky note.
-  $(".thisMoves").on("mouseup", event => {
-    event.stopPropagation();
-    console.log(dragged);
-    if (dragged === true) {
-      sendTextData(event.currentTarget);
-    }
-  });
+  // $(".thisMoves").on("mouseup", event => {
+  //   event.stopPropagation();
+  //   console.log(dragged);
+  //   if (dragged === true) {
+  //     sendTextData(event.currentTarget);
+  //   }
+  // });
 
   $(".textInput").on("click", () => {
     textEdit = true;
@@ -120,6 +120,7 @@ $(document).ready(() => {
     }
   });
 
+  // UPDATING the text and coordinates of the sticky note.
   function sendTextData(element) {
     if (dragged === true) {
       allData = {
@@ -141,7 +142,6 @@ $(document).ready(() => {
     }).then(() => {
       dragged = false;
       textEdit = false;
-      location.reload();
     });
   }
 });
