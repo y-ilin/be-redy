@@ -4,6 +4,10 @@ body {
   font-weight: normal;
 }
 
+.row {
+  height: 100vh;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
@@ -53,7 +57,9 @@ form.login {
   user-select: none;
   /* -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px); */
-  position: relative;
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
 }
 
 .deleteButton {
