@@ -1,7 +1,11 @@
 body {
-  font-family: "Sans-serif","Roboto";
+  font-family: "Sans-serif", "Roboto";
   font-style: normal;
   font-weight: normal;
+}
+
+.row {
+  height: 100vh;
 }
 
 form.signup,
@@ -54,7 +58,9 @@ form.login {
   user-select: none;
   /* -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px); */
-  position: relative;
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
 }
 
 /* Delete Button */
@@ -78,7 +84,10 @@ form.login {
   place-items: center;
 }
 
-.voteStar,
+.voteStar {
+  width: 20px;
+}
+
 .voteStarEmpty {
   width: 20px;
   opacity: 0.3;
@@ -126,7 +135,6 @@ form.login {
 .button {
   cursor: pointer;
 }
-
 
 /* Comments */
 .dropright {
@@ -181,7 +189,7 @@ hr {
   width: 42px;
 }
 
-.newStickyNoteButton { 
+.newStickyNoteButton {
   background-color: #fcfcfc;
   padding: 0px 0px 0px;
 }

@@ -27,7 +27,8 @@
         <p class="voteCount">{{ this.Users.length }}</p>
       </div>
 
-      <p contentEditable="true" onkeypress="return (this.innerText.length <= 120)"> {{ this.noteText }} </p>
+      <p contentEditable="true" onkeypress="return (this.innerText.length <= 120)" class="textInput">
+        {{ this.noteText }} </p>
 
       {{!-- Drop-right menu for the comments to show in, with an input box to add a new comment --}}
       <div class="btn-group dropright">
