@@ -9,10 +9,10 @@ module.exports = function(app) {
 
   app.post("/api/notes", (req, res) => {
     db.StickyNote.create({
-      noteText: "Add text here",
-      xCoord: 80,
-      yCoord: 80,
-      noteColour: "yellow"
+      noteText: req.body.noteText,
+      xCoord: req.body.xCoord,
+      yCoord: req.body.yCoord,
+      noteColour: req.body.noteColour
     }).then(data => {
       res.json(data);
     });

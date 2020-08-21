@@ -13,6 +13,7 @@
     <div id="{{ this.id }}" class="draggable thisMoves"
       style="background-image: url(assets/img/{{this.noteColour}}.png); transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
       data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
+
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
 
       <div class="button voteButton">
@@ -34,13 +35,14 @@
         <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
           <img class="newComment" src="/assets/img/post-it-comment.svg">
+          <p class="commentCount">{{ this.Comments.length }}</p>
         </a>
         <div class="dropdown-menu">
           {{#each this.Comments}}
-          <p>{{ this.commentText }}</p>
-          <br>
+            <p id="{{ this.id }}" class="thisComment">{{ this.commentText }}<button class="commentDelete"><i class="fas fa-times"></i></button></p>
+            <hr>
           {{/each}}
-          <input placeholder="New Comment" class="commentInput">
+          <input id="{{ this.id }}" placeholder="New Comment" class="commentInput">
         </div>
       </div>
     </div>
@@ -48,7 +50,19 @@
 
     <div class="side-panel">
       <div class="side-panel-icon">
-        <img src="/assets/img/add-post-it.svg" id="new-post">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="/assets/img/add-post-it.svg">
+
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a id="yellow" onclick="click">Yellow</a>
+            <a id="red" onclick="click">Red</a>
+            <a id="blue" onclick="click">Blue</a>
+          </div>
+        </div>
+        {{!-- <" id="new-post" > --}}
       </div>
       <div class="side-panel-icon">
         <img src="/assets/img/new-comment.svg" id="new-comment">
