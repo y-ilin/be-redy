@@ -9,11 +9,10 @@
 </nav>
 <div class="container">
   <div class="row">
-    {{#each stickyNote }}
-    <div id="{{ this.id }}" class="draggable thisMoves" 
-      style="background-image: url(assets/img/{{ this.noteColour }}.png);" "transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);" data-x="{{ this.xCoord }}"
-      data-y="{{ this.yCoord }}">
-
+    {{#each stickyNote}}
+    <div id="{{ this.id }}" class="draggable thisMoves"
+      style="background-image: url(assets/img/{{this.noteColour}}.png); transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
+      data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
 
       <div class="button voteButton">
@@ -28,10 +27,11 @@
       </div>
 
       <p contentEditable="true" onkeypress="return (this.innerText.length <= 120)"> {{ this.noteText }} </p>
-      
+
       {{!-- Drop-right menu for the comments to show in, with an input box to add a new comment --}}
       <div class="btn-group dropright">
-        <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
           <img class="newComment" src="/assets/img/post-it-comment.svg">
           <p class="commentCount">{{ this.Comments.length }}</p>
         </a>
