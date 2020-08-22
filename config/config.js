@@ -1,4 +1,4 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 module.exports = {
   development: {
@@ -21,4 +21,4 @@ module.exports = {
     use_env_variable: process.env.JAWSDB_URL,
     dialect: process.env.DB_MYSQL
   }
-}
+};
