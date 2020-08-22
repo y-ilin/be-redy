@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   Comment.associate = models => {
-    Comment.belongsTo(models.StickyNote);
+    Comment.belongsTo(models.StickyNote, { onDelete: "CASCADE" });
     Comment.belongsTo(models.User);
   };
   return Comment;
