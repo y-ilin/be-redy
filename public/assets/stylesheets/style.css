@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -50,25 +51,29 @@ body {
 
 .row {
   height: 100vh;
+  padding-top: 25%;
 }
 
+/* Login & Signup form */
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
-.a-href:hover {
-  text-decoration: none;
+#form-button {
+  background: #14c398;
+  border-color: #14c398;
+  color: #ffffff;
 }
 
+/* Landing Page Styles */
+
+/* Main DIV */
 .landing {
   position: fixed;
   width: 608px;
   height: 224px;
-  margin-top: -150px;
-  margin-left: -250px;
-  left: 50%;
-  top: 50%;
+  margin: 50px auto;
   font-size: 40px;
   line-height: 47px;
   color: #535353;
@@ -86,6 +91,12 @@ form.login {
   text-decoration: none;
 }
 
+/* Removing underline on hover of Click HERE */
+.a-href:hover {
+  text-decoration: none;
+}
+
+/* Login Button */
 #login-button {
   background: #14c398;
   border-color: #14c398;
@@ -93,7 +104,21 @@ form.login {
   font-size: 18px;
   padding: 8px 32px;
 }
+.login-button,
+.signup-button {
+  padding: 8px 32px !important;
+  font-size: 18px !important;
+}
 
+.formMargin {
+  margin-bottom: 48px !important;
+}
+
+.row {
+  padding-top: 88px !important;
+}
+
+/* Anchor tag in Login Button */
 .landing-login-a {
   text-decoration: none;
   color: #ffffff;
