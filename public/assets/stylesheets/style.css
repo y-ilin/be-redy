@@ -1,8 +1,52 @@
 /* General Styles */
 body {
-  font-family: "Sans-serif", "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
+  font-weight: 300;
+}
+
+/* NavBar */
+.navbar {
+  position: relative;
+  height: 72px;
+  background-color: #fcfcfc !important;
+}
+
+.navbar-header {
+  position: absolute;
+  right: 24px;
+  top: 16px;
+}
+
+.dropdown-menu {
+  text-align: center;
+  width: 100%;
+}
+.welcome {
+  color: #525252;
+}
+
+.dropdown-item {
+  color: #525252;
+}
+
+.dropdown-item:hover {
+  text-decoration: none;
+}
+
+.be-redy {
+  font-size: 24px;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  font-family: 'Raleway Dots', cursive;
+  color: #525252;
+}
+
+.be-redy:hover {
+  color: #262626;
+  text-decoration: none;
 }
 
 .row {
@@ -29,13 +73,22 @@ form.login {
   position: fixed;
   width: 608px;
   height: 224px;
-  margin-top: -150px;
-  margin-left: -250px;
-  left: 50%;
-  top: 50%;
+  margin: 50px auto;
   font-size: 40px;
   line-height: 47px;
   color: #535353;
+}
+
+.be-redy-text {
+  font-family: 'Raleway Dots', cursive;
+}
+.to-sign-up {
+  color: #14c398;
+}
+
+.to-sign-up:hover {
+  color: #0e9472;
+  text-decoration: none;
 }
 
 /* Removing underline on hover of Click HERE */
@@ -48,7 +101,21 @@ form.login {
   background: #14c398;
   border-color: #14c398;
   border-radius: 2px;
-  font-size: 30px;
+  font-size: 18px;
+  padding: 8px 32px;
+}
+.login-button,
+.signup-button {
+  padding: 8px 32px !important;
+  font-size: 18px !important;
+}
+
+.formMargin {
+  margin-bottom: 48px !important;
+}
+
+.row {
+  padding-top: 88px !important;
 }
 
 /* Anchor tag in Login Button */
@@ -207,13 +274,20 @@ hr {
 
 /* New Note Button */
 .newStickyNoteButton img {
-  height: 42px;
-  width: 42px;
+  height: 24px;
+  width: 24px;
+  margin-top: 16px;
 }
 
 .newStickyNoteButton {
   background-color: #fcfcfc;
   padding: 0px 0px 0px;
+}
+
+.new-post-its {
+  width: 42px;
+  position: absolute;
+  left: 32px;
 }
 
 #dropdownMenuButton {

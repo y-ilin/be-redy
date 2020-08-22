@@ -13,8 +13,8 @@ $(document).ready(() => {
   $(document).on("click", "#pink,#orange,#yellow", newNote);
 
   // Sets colour button id for newNote POST.
-  $(".dropdown-menu").click(c => {
-    dataC = c.target.id;
+  $(".newStickyNoteButton").on("click", event => {
+    dataC = event.currentTarget.id;
   });
 
   // Function to add note to db and reload page.
@@ -31,7 +31,6 @@ $(document).ready(() => {
       data: sticky
     }).then(() => {
       location.reload();
-      console.log(sticky);
     });
   }
 
