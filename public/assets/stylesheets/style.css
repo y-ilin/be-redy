@@ -66,9 +66,13 @@ form.login {
 /* Delete Button */
 .deleteButton {
   position: absolute;
-  top: 25px;
-  left: 35px;
-  color: grey;
+  top: 15px;
+  left: 25px;
+  color: #525252;
+  opacity: 0;
+}
+.draggable:hover .deleteButton {
+  opacity: 1;
 }
 
 /* Voting on a note */
@@ -135,7 +139,7 @@ form.login {
 /* Comments */
 .dropright {
   margin-left: 104px;
-  margin-top: -50px;
+  margin-top: -5px;
 }
 .dropdown-menu {
   z-index: 99;
@@ -164,6 +168,13 @@ form.login {
 
 hr {
   margin: 8px 0px !important;
+}
+
+.textInput {
+  position: absolute;
+  top: 38px;
+  right: 38px;
+  left: 38px;
 }
 
 /* Comment Delete */
