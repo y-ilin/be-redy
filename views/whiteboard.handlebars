@@ -1,12 +1,19 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
+    <a class="be-redy" href="/">BE-REDY</a>
     <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle welcome" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Hello <span class="member-name"></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="/logout">Sign out</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
+
 <div class="container">
   <div class="row">
     {{#each stickyNote}}
@@ -48,27 +55,13 @@
     </div>
     {{/each}}
 
-    <div class="side-panel">
-      <div class="side-panel-icon">
-        <div class="dropdown">
-          <button class="newStickyNoteButton btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <img src="/assets/img/add-post-it.svg">
-
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a id="yellow" onclick="click">Yellow</a>
-            <a id="red" onclick="click">Red</a>
-            <a id="blue" onclick="click">Blue</a>
-          </div>
+        <div class="new-post-its">
+          <a class="newStickyNoteButton" id="yellow" onclick="click"><img src="/assets/img/yellow-post-it.svg"></a>
+          <br>
+          <a class="newStickyNoteButton" id="red" onclick="click"><img src="/assets/img/orange-post-it.svg"></a>
+          <br>
+          <a class="newStickyNoteButton" id="blue" onclick="click"><img src="/assets/img/pink-post-it.svg"></a>
         </div>
-        {{!-- <" id="new-post" > --}}
-      </div>
-      <div class="side-panel-icon">
-        <img src="/assets/img/new-comment.svg" id="new-comment">
-      </div>
-      <div class="side-panel-icon">
-        <img src="/assets/img/star.svg" id="star">
       </div>
     </div>
   </div>

@@ -1,7 +1,51 @@
 body {
-  font-family: "Sans-serif", "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
+  font-weight: 300;
+}
+
+/* NavBar */
+.navbar {
+  position: relative;
+  height: 72px;
+  background-color: #fcfcfc !important;
+}
+
+.navbar-header {
+  position: absolute;
+  right: 24px;
+  top: 16px;
+}
+
+.dropdown-menu {
+  text-align: center;
+  width: 100%;
+}
+.welcome {
+  color: #525252;
+}
+
+.dropdown-item {
+  color: #525252;
+}
+
+.dropdown-item:hover {
+  text-decoration: none;
+}
+
+.be-redy {
+  font-size: 24px;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  font-family: 'Raleway Dots', cursive;
+  color: #525252;
+}
+
+.be-redy:hover {
+  color: #262626;
+  text-decoration: none;
 }
 
 .row {
@@ -30,11 +74,24 @@ form.login {
   color: #535353;
 }
 
+.be-redy-text {
+  font-family: 'Raleway Dots', cursive;
+}
+.to-sign-up {
+  color: #14c398;
+}
+
+.to-sign-up:hover {
+  color: #0e9472;
+  text-decoration: none;
+}
+
 #login-button {
   background: #14c398;
   border-color: #14c398;
   border-radius: 2px;
-  font-size: 30px;
+  font-size: 18px;
+  padding: 8px 32px;
 }
 
 .landing-login-a {
@@ -192,13 +249,20 @@ hr {
 
 /* New Note Button */
 .newStickyNoteButton img {
-  height: 42px;
-  width: 42px;
+  height: 24px;
+  width: 24px;
+  margin-top: 16px;
 }
 
 .newStickyNoteButton {
   background-color: #fcfcfc;
   padding: 0px 0px 0px;
+}
+
+.new-post-its {
+  width: 42px;
+  position: absolute;
+  left: 32px;
 }
 
 #dropdownMenuButton {
