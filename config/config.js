@@ -2,23 +2,23 @@ const dotenv = require('dotenv');
 dotenv.config();
 module.exports = {
   development: {
-    username: root,
-    password: sqlpassword,
-    database: passport_demo,
-    host: 127.0.0.1,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
     port: process.env.PORT,
-    dialect: mysql
+    dialect: process.env.DB_MYSQL
   },
   test: {
-    username: root,
-    password: null,
-    database: database_test,
-    host: 127.0.0.1,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    host: process.env.DB_HOST,
     port: process.env.PORT,
-    dialect: mysql
+    dialect: process.env.DB_MYSQL
   },
   production: {
-    use_env_variable: JAWSDB_URL,
-    dialect: mysql
+    use_env_variable: process.env.JAWSDB_URL,
+    dialect: process.env.DB_MYSQL
   }
 }

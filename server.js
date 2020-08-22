@@ -3,9 +3,6 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const Handlebars = require("handlebars");
-// Requiring .env
-const dotenv = require("dotenv");
-dotenv.config();
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const {
@@ -47,7 +44,7 @@ require("./controllers/vote-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({ force: true }).then(() => {
-  app.listen(process.env.PORT, () => {
+  app.listen(PORT, () => {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
