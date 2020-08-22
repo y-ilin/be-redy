@@ -96,18 +96,9 @@ $(document).ready(() => {
       method: "DELETE",
       url: "/api/notes/" + id
     }).then(() => {
-      console.log("sticky deleted");
       location.reload();
     });
   }
-
-  // $(".thisMoves").on("mouseup", event => {
-  //   event.stopPropagation();
-  //   console.log(dragged);
-  //   if (dragged === true) {
-  //     sendTextData(event.currentTarget);
-  //   }
-  // });
 
   $(".textInput").on("click", () => {
     textEdit = true;
