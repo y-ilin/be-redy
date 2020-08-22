@@ -10,7 +10,7 @@ $(document).ready(() => {
   });
 
   // Click event for new note.
-  $(document).on("click", "#red,#blue,#yellow", newNote);
+  $(document).on("click", "#pink,#orange,#yellow", newNote);
 
   // Sets colour button id for newNote POST.
   $(".dropdown-menu").click(c => {
