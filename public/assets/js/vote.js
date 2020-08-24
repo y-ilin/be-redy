@@ -19,7 +19,7 @@ $(document).ready(() => {
       const sticky = voteButtonClicked.closest(".draggable");
       const stickyId = $(sticky).attr("id");
 
-      // Send post request to server with the stickyId and userId in order to log this vote
+      // POST request sent with the stickyId and userId in order to log this vote
       $.post("/api/vote", { stickyId, voteFor }, data => {
         // Find the star vote counter for this sticky
         const stickyStar = $(sticky).find(".voteCount");

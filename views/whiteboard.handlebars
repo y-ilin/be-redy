@@ -3,8 +3,9 @@
     <a class="be-redy" href="#">BE-REDY</a>
     <div class="navbar-header">
       <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle welcome" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Hello <span class="member-name"></span>
+        <a class="btn btn-secondary dropdown-toggle welcome" href="#" role="button" id="dropdownMenuLink"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Hello <span class="member-name"></span>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="/logout">Sign out</a>
@@ -17,12 +18,15 @@
 <div class="container">
   <div class="row">
     {{#each stickyNote}}
+    {{!-- Sticky note --}}
     <div id="{{ this.id }}" class="draggable thisMoves"
       style="background-image: url(assets/img/{{this.noteColour}}.png); transform: translate({{ this.xCoord }}px, {{ this.yCoord }}px);"
       data-x="{{ this.xCoord }}" data-y="{{ this.yCoord }}">
 
+      {{!-- Delete button --}}
       <div class="button deleteButton"><i class="fas fa-times"></i></div>
 
+      {{!-- Vote button --}}
       <div class="button voteButton">
         {{!-- If the logged-in user has voted for this comment already, render the full star --}}
         {{#if User2}}
@@ -43,25 +47,29 @@
         </a>
         <div class="dropdown-menu">
           {{#each this.Comments}}
-            <p id="{{ this.id }}" class="thisComment">{{ this.commentText }}<button class="commentDelete"><i class="fas fa-times"></i></button></p>
-            <hr>
+          <p id="{{ this.id }}" class="thisComment">{{ this.commentText }}<button class="commentDelete"><i
+                class="fas fa-times"></i></button></p>
+          <hr>
           {{/each}}
           <input id="{{ this.id }}" placeholder="New Comment" class="commentInput">
         </div>
       </div>
 
+      {{!-- Sticky text --}}
       <p contentEditable="true" onkeypress="return (this.innerText.length <= 120)" class="textInput">
         {{ this.noteText }} </p>
     </div>
     {{/each}}
-        <div class="new-post-its">
-          <a class="newStickyNoteButton" id="yellow" onclick="click"><img src="/assets/img/yellow-post-it.svg"></a>
-          <br>
-          <a class="newStickyNoteButton" id="orange" onclick="click"><img src="/assets/img/orange-post-it.svg"></a>
-          <br>
-          <a class="newStickyNoteButton" id="pink" onclick="click"><img src="/assets/img/pink-post-it.svg"></a>
-        </div>
-      </div>
+
+    {{!-- Buttons to create stickies --}}
+    <div class="new-post-its">
+      <a class="newStickyNoteButton" id="yellow" onclick="click"><img src="/assets/img/yellow-post-it.svg"></a>
+      <br>
+      <a class="newStickyNoteButton" id="orange" onclick="click"><img src="/assets/img/orange-post-it.svg"></a>
+      <br>
+      <a class="newStickyNoteButton" id="pink" onclick="click"><img src="/assets/img/pink-post-it.svg"></a>
     </div>
   </div>
+</div>
+</div>
 </div>

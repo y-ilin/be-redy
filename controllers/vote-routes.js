@@ -20,8 +20,7 @@ module.exports = function(app) {
     });
   }
 
-  // When receiving a POST request to /api/vote, log the user's vote by adding
-  // that particular user to that particular sticky's table in the database.
+  // POST route to log the user's vote by adding that particular user to that particular sticky's table in the database.
   app.post("/api/vote", async (req, res) => {
     try {
       // Finding the relevant sticky from the Sticky model

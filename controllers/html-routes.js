@@ -6,6 +6,7 @@ const db = require("../models");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
+  // GET route on page load on our app landing page,
   app.get("/", (req, res) => {
     // If the user already has an account send them to the whiteboard page
     if (req.user) {
@@ -14,6 +15,7 @@ module.exports = function(app) {
     res.render("landing");
   });
 
+  // GET route on page load on our signup page,
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the whiteboard page
     if (req.user) {
@@ -22,6 +24,7 @@ module.exports = function(app) {
     res.render("signup");
   });
 
+  // GET route on page load on our login page,
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the whiteboard page
     if (req.user) {
@@ -30,9 +33,9 @@ module.exports = function(app) {
     res.render("login");
   });
 
+  // GET route on our whiteboard page.
   // Here we've add our isAuthenticated middleware to this route
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-
   // Modify this route to change data to the whiteboard page through handlebars.js
   app.get("/whiteboard", isAuthenticated, (req, res) => {
     console.log(req.user);
@@ -50,6 +53,7 @@ module.exports = function(app) {
           where: { id: req.user.id },
           required: false
         },
+        // This includes an array of each comment on this particular sticky.
         {
           model: db.Comment
         }
