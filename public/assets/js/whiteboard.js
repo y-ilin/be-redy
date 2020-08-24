@@ -25,6 +25,8 @@ $(document).ready(() => {
       yCoord: 80,
       noteColour: dataC
     };
+
+    // POST request to create a sticky
     $.ajax({
       method: "POST",
       url: "/api/notes",
@@ -91,6 +93,7 @@ $(document).ready(() => {
     const id = $(closestSticky).attr("id");
     console.log("sticky id is " + id);
 
+    // DELETE request to delete sticky
     $.ajax({
       method: "DELETE",
       url: "/api/notes/" + id
@@ -125,6 +128,8 @@ $(document).ready(() => {
         id: element.id
       };
     }
+
+    // PUT request to update sticky
     $.ajax({
       method: "PUT",
       url: "/api/notes",

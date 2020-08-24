@@ -1,9 +1,14 @@
 /* General Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-weight: 300;
+}
+
+.row {
+  height: 100vh;
+  padding-top: 25%;
 }
 
 /* NavBar */
@@ -40,18 +45,13 @@ body {
   position: absolute;
   top: 16px;
   left: 24px;
-  font-family: 'Raleway Dots', cursive;
+  font-family: "Raleway Dots", cursive;
   color: #525252;
 }
 
 .be-redy:hover {
   color: #262626;
   text-decoration: none;
-}
-
-.row {
-  height: 100vh;
-  padding-top: 25%;
 }
 
 /* Login & Signup form */
@@ -80,7 +80,7 @@ form.login {
 }
 
 .be-redy-text {
-  font-family: 'Raleway Dots', cursive;
+  font-family: "Raleway Dots", cursive;
 }
 .to-sign-up {
   color: #14c398;
@@ -138,8 +138,6 @@ form.login {
   padding: 35px;
   touch-action: none;
   user-select: none;
-  /* -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px); */
   position: absolute;
   top: 80px;
   bottom: 80px;

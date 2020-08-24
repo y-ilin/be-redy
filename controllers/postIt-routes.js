@@ -1,12 +1,14 @@
 const db = require("../models");
 
 module.exports = function(app) {
+  // GET route for loading our API to show all stickies
   app.get("/api/notes", (req, res) => {
     db.StickyNote.findAll({}).then(data => {
       res.json(data);
     });
   });
 
+  // POST route to create a comment
   app.post("/api/notes", (req, res) => {
     db.StickyNote.create({
       noteText: req.body.noteText,
@@ -18,7 +20,7 @@ module.exports = function(app) {
     });
   });
 
-  // UPDATE route for updating text and coordinates
+  // UPDATE route for updating sticky text and coordinates
   app.put("/api/notes", (req, res) => {
     db.StickyNote.update(req.body, {
       where: {
@@ -29,7 +31,7 @@ module.exports = function(app) {
     });
   });
 
-  // DELETE route for deleting stickies.
+  // DELETE route for deleting stickies
   app.delete("/api/notes/:id", (req, res) => {
     db.StickyNote.destroy({
       where: {

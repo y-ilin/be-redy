@@ -21,7 +21,7 @@ $(document).ready(() => {
     passwordInput.val("");
   });
 
-  // Does a post to the signup route. If successful, we are redirected to the whiteboard page
+  // POST request to the signup route. If successful, we are redirected to the whiteboard page
   // Otherwise we log any errors
   function signUpUser(email, password) {
     $.post("/api/signup", {
