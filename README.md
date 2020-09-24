@@ -25,7 +25,7 @@
 
 🚨
 
-View live demo <a href="be-redy.herokuapp.com">here</a>
+View live demo <a href="https://be-redy.herokuapp.com/">here</a>
 
 ## License
 
